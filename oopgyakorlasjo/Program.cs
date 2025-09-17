@@ -92,6 +92,26 @@ namespace oopgyakorlasjo
             hallgato hallgato1 = new hallgato();
             hallgato1.Neptunkod = "MWHLN9";
             Console.WriteLine(hallgato1.Neptunkod);
+
+            List<hallgato> hallgatok = new List<hallgato>();
+
+            for (int i = 0; i < 2; i++)
+            {
+                hallgato hallgato = new hallgato();
+                Console.Write($"Kérem a(z) {i+1} hallgató nevét:");
+                hallgato.Nev = Console.ReadLine();
+                Console.Write($"Kérem a(z) {i + 1} hallgató életkorát:");
+                hallgato.Kor = int.Parse ( Console.ReadLine() );
+                Console.Write($"Kérem a(z) {i + 1} hallgató neptunkódját:");
+                hallgato.Neptunkod = Console.ReadLine();
+                hallgatok.Add( hallgato );
+                
+            }
+            foreach (var item in hallgatok)
+            {
+                Console.WriteLine($"A hallgatók neve: {item.Nev}");
+
+            }
             
             
             
