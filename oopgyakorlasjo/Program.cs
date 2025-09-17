@@ -11,6 +11,11 @@ namespace oopgyakorlasjo
         private string nev;
         private int kor;
 
+        public szemely(string name, int age)
+        {
+            nev = name;
+            kor = age;
+        }
         public string Nev
         {
             get { return nev; }
@@ -31,6 +36,11 @@ namespace oopgyakorlasjo
     {
         private string neptunkod;
 
+        public hallgato(string name, int age, string neptuncode) : base(name,age)
+        {
+            neptunkod = neptuncode;
+        }
+
         public string Neptunkod
         {
             get { return neptunkod; }
@@ -42,10 +52,29 @@ namespace oopgyakorlasjo
                     Console.WriteLine("Nem megfelelő hosszúság.");
             }
         }
-        public void Kiir()
+        public override string ToString()
         {
-            Nev = string.Empty;
+            return $"A hallgató neve {Nev}";
+        }   
+        
+            
+        
+    }
+
+    public class Dolgozo : szemely
+    {
+        private int ber;
+
+        public Dolgozo(string name, int age, int salary) : base(name,age)
+        {
+            ber = salary;
         }
+        public override string ToString()
+        {
+            return $"A hallgató neve {Nev} a bére {ber} ";
+        }
+
+
     }
            
     public class Bankszamla
@@ -79,7 +108,7 @@ namespace oopgyakorlasjo
     {
         static void Main(string[] args)
         {
-            szemely tanulo1 = new szemely();
+            /*szemely tanulo1 = new szemely();
             tanulo1.Nev = "Gabor";
             Console.WriteLine(tanulo1.Nev);
             tanulo1.Kor = 44;
@@ -111,7 +140,12 @@ namespace oopgyakorlasjo
             {
                 Console.WriteLine($"A hallgatók neve: {item.Nev}");
 
-            }
+            }*/
+
+            hallgato hallgato1 = new hallgato("Peti", 22, "MHWLN9");
+            Console.WriteLine(hallgato1);
+            Dolgozo dolgozo1 = new Dolgozo("Gábor", 43, 7500);
+            Console.WriteLine(dolgozo1);
             
             
             
