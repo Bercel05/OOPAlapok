@@ -29,7 +29,19 @@ namespace oopgyakorlasjo
     }
     public class hallgato : szemely
     {
-        private int neptunkod;
+        private string neptunkod;
+
+        public string Neptunkod
+        {
+            get { return neptunkod; }
+            set
+            {
+                if(value.Length < 7)
+                    neptunkod = value;
+                else
+                    Console.WriteLine("Nem megfelelő hosszúság.");
+            }
+        }
         public void Kiir()
         {
             Nev = string.Empty;
@@ -76,6 +88,10 @@ namespace oopgyakorlasjo
             Bankszamla bankszamla1 = new Bankszamla();
             bankszamla1.Egyenleg = 5700;
             Console.WriteLine(bankszamla1.Egyenleg);
+
+            hallgato hallgato1 = new hallgato();
+            hallgato1.Neptunkod = "MWHLN9";
+            Console.WriteLine(hallgato1.Neptunkod);
             
             
             
