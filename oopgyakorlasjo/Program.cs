@@ -27,6 +27,15 @@ namespace oopgyakorlasjo
             return $"A tanuló neve: {nev} és életkora {kor} ebves";
         }
     }
+    public class hallgato : szemely
+    {
+        private int neptunkod;
+        public void Kiir()
+        {
+            Nev = string.Empty;
+        }
+    }
+           
     public class Bankszamla
     {
         private int egyenleg;
